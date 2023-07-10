@@ -83,22 +83,12 @@ class Students
     public function __toString()
     {
         return "Bonjour, je m'appelle $this->firstname $this->lastname, j'ai " . $this->getStudentAge() . "ans et je vais à 
-        l'école $this->schoolName en classe de $this->schoolLevel <br>";
+        l'école $this->schoolName en classe de $this->schoolLevel. <br>";
                         
     }
     
 }
 
-
-
-// public function __toString(){
-//     return 'Nom d\'utilisateur : ' .$this->user_name. '<br>
-//     Prix de l\'abonnement : ' .$this->prix_abo. '<br><br>';
-// }
-// Donner la possibilité aux élèves de se présenter en affichant la phrase suivante :<br>
-//                 "Bonjour, je m'appelle XXX XXX, j'ai XX ans et je vais à l'école XXX en classe de XXX.".
-//                 <br>
-//                 Afficher la phrase de présentation des 2 élèves.
 ?>
 
 <!DOCTYPE html>

@@ -1,3 +1,91 @@
+<?php
+
+class Professors
+{
+    private string $firstname;
+    private string $lastname;
+    private array $subjects = [];
+    private ?string $schoolName;
+
+    public function __construct(string $firstname, string $lastname, array $subjects = [], string $schoolName = null)
+    {
+        $this->firstname = $firstname;
+        $this->lastname = $lastname;
+        $this->subjects = $subjects;
+        $this->schoolName = $schoolName;
+    }
+
+    public function setFirstname(string $firstname): void
+    {
+        $this->firstname = $firstname;
+    }
+
+    public function getFirstname(): string
+    {
+        return $this->firstname;
+    }
+
+    public function setLastname(string $lastname): void
+    {
+        $this->lastname = $lastname;
+    }
+
+    public function getLastname(): string
+    {
+        return $this->lastname;
+    }
+
+    // public function setSubjects(array $subjects): void
+    // {
+    //     $this->subjects = $subjects;
+    // }
+
+    // public function getSubjects(): array
+    // {
+    //     return $this->subjects;
+    // }
+
+    public function setSchoolName(string $schoolName): void
+    {
+        $this->schoolName = $schoolName;
+    }
+
+    public function getSchoolName(): string
+    {
+        return $this->schoolName;
+    }
+
+    public function __toString()
+    {
+        return "Bonjour, je m'appelle $this->firstname $this->lastname, j'enseigne à l'école $this->schoolName les matières suivantes {$this->displaySubjects()}. <br>";
+                        
+    }
+
+    //------------
+    // METHODS
+    //------------
+    
+    public function addSubjects(string $subject): array {
+        array_push($this->subjects, $subject);
+        return $this->subjects;
+    }
+
+    public function deleteSubjects(string $subject) {
+        $index = array_search($subject, $this->subjects);
+        if ($index !== false) {
+            unset($this->subjects[$index]);
+        }
+        return $this->$subject;
+    }
+    
+    public function displaySubjects() {
+        return implode(' ', $this->subjects);
+        }
+} 
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,11 +119,22 @@
             <p class="exercice-txt">
                 Créer une classe permettant de créer des professeurs ayant un nom, un prénom, une liste des matières qu'il enseigne et le nom de l'école où il enseigne.
                 <br>
-                Définir toutes les propriétés à l'instanciation en rendant la liste des matières et le nom de lécole faculative.
+                Définir toutes les propriétés à l'instanciation en rendant la liste des matières et le nom de l'école faculative.
                 <br>
                 Créer 2 professeurs différents.
             </p>
             <div class="exercice-sandbox">
+
+            <?php
+
+            $professor1 = new professors('Rachel', 'Green', ['Musique', 'Solfège'], 'Ecole Tartampion');
+
+            var_dump($professor1);
+
+            $professor2 = new professors('Ross', 'Ghaller', ['Anglais', 'Droit Anglais'], 'Ecole du soir');
+            var_dump($professor2);
+
+            ?>
                 
             </div>
         </section>
@@ -52,6 +151,15 @@
                 Afficher les écoles des 2 professeurs.
             </p>
             <div class="exercice-sandbox">
+
+            <?php
+
+                $professor1->setSchoolName('Prof Sup');
+                $professor2->setSchoolName('Ecole des profs');
+                echo $professor1->getFirstname() . ' : ' . $professor1->getSchoolName() . '<br>';
+                echo $professor2->getFirstname() . ' : ' . $professor2->getSchoolName();
+
+            ?>
                 
             </div>
         </section>
@@ -66,6 +174,17 @@
                 Tester l'ajout, la suppression et l'affichage sur chacun des profs.
             </p>
             <div class="exercice-sandbox">
+
+                <?php
+
+                    $professor1->addSubjects('Espagnol, Allemand');
+                    $professor2->addSubjects('Volley, Athlétisme');
+
+                    echo $professor1->displaySubjects();
+                    echo $professor2->displaySubjects();
+
+
+                ?>
                 
             </div>
         </section>
@@ -81,6 +200,13 @@
                 Afficher la phrase de présentation des 2 profs.
             </p>
             <div class="exercice-sandbox">
+
+                <?php
+
+                    echo $professor1;
+                    echo $professor2;
+                
+                ?>
                 
             </div>
         </section>
