@@ -60,6 +60,8 @@
                 Mutualiser le code commun des 2 classes grâce à l'héritage.
             </p>
             <div class="exercice-sandbox">
+
+            
                 
             </div>
         </section>
