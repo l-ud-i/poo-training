@@ -10,9 +10,9 @@ namespace App\Objects;
 
                 public function __construct(string $firstname, string $lastname, string $schoolName)
                 {
-                $this->firstname = $firstname;
-                $this->lastname = $lastname;
-                $this->schoolName = $schoolName;
+                    $this->firstname = $firstname;
+                    $this->lastname = $lastname;
+                    $this->schoolName = $schoolName;
                 }
 
                 public function setFirstname(string $firstname): void

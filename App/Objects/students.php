@@ -7,22 +7,17 @@ use DateTime;
 
 class Students extends Person
 {
-    private string $firstname;
-    private string $lastname;
+
     private DateTime $birthdate;
     private string $schoolLevel;
-    private string $schoolName;
 
 
     public function __construct(string $firstname, string $lastname, DateTime $birthdate, string $schoolLevel, string $schoolName)
     {
         parent::__construct($firstname, $lastname, $schoolName);
 
-        $this->firstname = $firstname;
-        $this->lastname = $lastname;
         $this->birthdate = $birthdate;
         $this->schoolLevel = $schoolLevel;
-        $this->schoolName = $schoolName;
     }
 
     public function setBirthdate(DateTime $birthdate): void

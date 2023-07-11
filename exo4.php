@@ -35,6 +35,19 @@
             </p>
             <div class="exercice-sandbox">
 
+            <?php
+
+                require_once "App/Objects/schools.php";
+                use App\Objects\Schools;
+
+                $schoolName1 = new Schools('Ecole Numerique ', 'Rouen');
+                $schoolName2 = new Schools('Ecole du multimedia', 'Evreux');
+
+                var_dump($schoolName1);
+                var_dump($schoolName2);
+
+            ?>
+
             </div>
         </section>
         
@@ -43,13 +56,47 @@
         <section class="exercice">
             <h2 class="exercice-ttl">Question 2</h2>
             <p class="exercice-txt"> 
-                Créer 3 classes correspondants aux 3 types d'école suivants : primaire, des collège et des lycée.
+                Créer 3 classes correspondants aux 3 types d'école suivants : primaire, collège et lycée.
                 <br>
                 Pour chaque type d'école définir la liste des niveaux scolaires qu'il prend en charge (ex de niveau scolaire : "CP", "CM2", "5ème", "Terminale", ...).
                 <br>
                 Créer une école de chaque type.
             </p>
             <div class="exercice-sandbox">
+
+            <?php
+
+                require_once "App/Objects/elementary.php";
+                use App\Objects\Elementary;
+
+                $school1 = new Elementary('Puits Picard', 'Caen');
+                $school2 = new Elementary('Albert Camus', 'Caen');
+               
+                var_dump($school1);
+                var_dump($school2);
+
+                require_once "App/Objects/middleschool.php";
+                use App\Objects\MiddleSchool;
+
+                $school3 = new MiddleSchool('Pigier', 'Rouen');
+                $school4 = new MiddleSchool('CESI', 'Rouen');
+                
+
+                var_dump($school3);
+                var_dump($school4);
+                
+
+                require_once "App/Objects/highSchool.php";
+                use App\Objects\HighSchool;
+
+                $school5 = new HighSchool('CCI', 'Evreux');
+                $school6 = new HighSchool('Marie Curie', 'Evreux');
+
+
+                var_dump($school5);
+                var_dump($school6);
+
+            ?>
                 
             </div>
         </section>
@@ -64,6 +111,11 @@
                 Tester la méthode créée.
             </p>
             <div class="exercice-sandbox">
+
+            <?php
+          
+
+            ?>
                 
             </div>
         </section>
@@ -77,6 +129,12 @@
                 Ajuster le code de toutes les classes afin que tous les exercices précédents fonctionnent à nouveau.
             </p>
             <div class="exercice-sandbox">
+
+            <?php
+
+
+
+            ?>
                 
             </div>
         </section>

@@ -4,19 +4,14 @@ namespace App\Objects;
 
 class Professors extends Person
 {
-    private string $firstname;
-    private string $lastname;
     private array $subjects = [];
     private ?string $schoolName;
 
-    public function __construct(string $firstname, string $lastname, array $subjects = [], string $schoolName = null)
+    public function __construct(string $firstname, string $lastname, string $schoolName, array $subjects = [])
     {
         parent::__construct($firstname, $lastname, $schoolName);
                 
-        $this->firstname = $firstname;
-        $this->lastname = $lastname;
         $this->subjects = $subjects;
-        $this->schoolName = $schoolName;
     }
 
         public function __toString()
